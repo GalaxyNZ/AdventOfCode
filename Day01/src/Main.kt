@@ -8,6 +8,12 @@ object Main {
 
     @JvmStatic
     fun main(args: Array<String>) {
+        println(part1().last())
+
+        println(part2())
+    }
+
+    fun part1(): Array<Int> {
         // Set up scanner
         val scanner = Scanner(File("Day01/puzzle_input"))
 
@@ -23,6 +29,12 @@ object Main {
         }
 
         calories_list.sort()
-        println(calories_list.last())
+        return calories_list
+    }
+
+    fun part2(): Int {
+        calories_list.reverse()
+
+        return calories_list[0] + calories_list[1] + calories_list[2]
     }
 }

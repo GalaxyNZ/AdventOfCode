@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee16e18d-aa59-4b99-a087-60cf8b84d078" name="Changes" comment="Set up Day 1 and 2">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day01/puzzle_input" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="ee16e18d-aa59-4b99-a087-60cf8b84d078" name="Changes" comment="Day 1 Part 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Day01/Instructions.md" beforeDir="false" afterPath="$PROJECT_DIR$/Day01/Instructions.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Day01/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Day01/src/Main.kt" afterDir="false" />
@@ -82,7 +79,7 @@
       <workItem from="1669801521581" duration="778000" />
       <workItem from="1669802348028" duration="753000" />
       <workItem from="1669866977442" duration="1487000" />
-      <workItem from="1669885496832" duration="682000" />
+      <workItem from="1669885496832" duration="1643000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1669800609361</created>
@@ -105,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669803087774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Day 1 Part 1">
+      <created>1669886509163</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669886509163</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +129,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
     <MESSAGE value="Set up Day 1 and 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set up Day 1 and 2" />
+    <MESSAGE value="Day 1 Part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 1 Part 1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
