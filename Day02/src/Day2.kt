@@ -3,7 +3,7 @@ import java.io.File
 object Day2 {
 
 
-    val scoreMap = mapOf<String, Array<Int>>(
+    private val scoreMap = mapOf(
         Pair("AX", arrayOf(1 + 3, 1 + 3)),      // RR
         Pair("AY", arrayOf(1 + 0, 2 + 6)),      // RP
         Pair("AZ", arrayOf(1 + 6, 3 + 0)),      // RS
@@ -13,17 +13,21 @@ object Day2 {
         Pair("CX", arrayOf(3 + 0, 1 + 6)),      // SR
         Pair("CY", arrayOf(3 + 6, 2 + 0)),      // SP
         Pair("CZ", arrayOf(3 + 3, 3 + 3)),      // SS
+
+        Pair("A", arrayOf(4, 4)),
+        Pair("B", arrayOf(5, 5)),
+        Pair("C", arrayOf(6, 6)),
     )
 
-    val winMap = mapOf<String, String>(
+    private val winMap = mapOf(
         Pair("A", "Y"),
         Pair("B", "Z"),
         Pair("C", "X")
     )
 
-    val loseMap = mapOf<String, String>(
+    private val loseMap = mapOf(
         Pair("A", "Z"),
-        Pair("B", "Z"),
+        Pair("B", "X"),
         Pair("C", "Y")
     )
 
@@ -38,25 +42,50 @@ object Day2 {
 
         partOne()
 
+        resetScores()
+
         partTwo()
     }
 
-    fun partOne() {
-
+    private fun partOne() {
         for (line in rounds) {
-            var move = line.replace(" ", "")
+            val move = line.replace(" ", "")
 
-            var scores = scoreMap[move]
+            val scores = scoreMap[move]
             theirScore += scores?.get(0)!!
-            ourScore += scores?.get(1)!!
+            ourScore += scores[1]
         }
 
-        println(theirScore)
         println(ourScore)
     }
 
-    fun partTwo() {
+    private fun partTwo() {
+        for (line in rounds) {
+            val move = line.split(" ")
+            var them = move[0]
+            val me = move[1]
 
+            when (me) {
+                "X" -> { // Lose
+                    them += loseMap[them]
+                }
+
+                "Z" -> { // Win
+                    them += winMap[them]
+                }
+            }
+            val scores = scoreMap[them]
+
+            theirScore += scores?.get(0)!!
+            ourScore += scores[1]
+
+        }
+        println(ourScore)
+    }
+
+    private fun resetScores() {
+        ourScore = 0
+        theirScore = 0
     }
 
 }
