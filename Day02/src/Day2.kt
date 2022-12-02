@@ -49,9 +49,8 @@ object Day2 {
 
     private fun partOne() {
         for (line in rounds) {
-            val move = line.replace(" ", "")
 
-            val scores = scoreMap[move]
+            val scores = scoreMap[line.replace(" ", "")]
             theirScore += scores?.get(0)!!
             ourScore += scores[1]
         }
@@ -63,16 +62,10 @@ object Day2 {
         for (line in rounds) {
             val move = line.split(" ")
             var them = move[0]
-            val me = move[1]
 
-            when (me) {
-                "X" -> { // Lose
-                    them += loseMap[them]
-                }
-
-                "Z" -> { // Win
-                    them += winMap[them]
-                }
+            when (move[1]) {
+                "X" -> them += loseMap[them] // Lose
+                "Z" -> them += winMap[them] // Win
             }
             val scores = scoreMap[them]
 
