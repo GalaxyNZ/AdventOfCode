@@ -65,6 +65,8 @@ object Day3 {
     @JvmStatic
     fun main(args: Array<String>) {
         part1()
+
+        part2()
     }
 
     private fun part1() {
@@ -82,12 +84,49 @@ object Day3 {
             }
         }
 
+
+        println(calculateSum())
+    }
+
+    private fun part2() {
+        items.clear()
+        var group = mutableListOf<MutableList<Char>>()
+        val groups = mutableListOf<MutableList<MutableList<Char>>>()
+
+        var e = 0
+        for (sack in lines) {
+            if (e == 3) {
+                e = 0
+                groups.add(group)
+                group = mutableListOf()
+            }
+            group.add(e, sack.toCharArray().toTypedArray().toMutableList())
+
+            e++
+        }
+
+        groups.add(group)
+
+        loop@ for (trio in groups) {
+            for (character in trio[0]) {
+                if (trio[1].contains(character) && trio[2].contains(character)) {
+                    items[character] = items.getOrDefault(character, 0) + 1
+                    continue@loop
+                }
+            }
+        }
+
+        println(calculateSum())
+    }
+
+
+    private fun calculateSum(): Int {
         var sum = 0
 
         for (item in items.keys) {
             sum += priorityIndex.indexOf(item) * items[item]!!
         }
 
-        println(sum)
+        return sum
     }
 }
