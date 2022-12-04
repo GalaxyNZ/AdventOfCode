@@ -2,6 +2,7 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+.idea/
 
 ### Eclipse ###
 .apt_generated
@@ -30,7 +31,4 @@ bin/
 
 
 /adventofcodeauth
-/.idea/
-.idea/
-AdventOfCode.iml
-/AdventOfCode.iml/
+/AdventOfCode
